@@ -4,6 +4,7 @@ license: Apache-2.0
 disable-model-invocation: true
 description: Bootstrap directory README.md files across a repository subtree.
 ---
+<!-- Modified by claudemods for Context Forge: command prefix /egm: -> /context-forge:, doc paths moved to docs/egm/. Original (c) 2026 Google LLC, Apache-2.0. -->
 
 # EGM Peanuts and Hay Bootstrap (`egm-bootstrap`)
 

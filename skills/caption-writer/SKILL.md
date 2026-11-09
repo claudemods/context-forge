@@ -21,7 +21,7 @@ State clearly at the start of every session which inputs are available and which
 | Input | How to get it | Why it matters |
 |---|---|---|
 | **Best-performing posts** | From Instagram Insights: sort posts by Saves or Reach. Screenshot or paste top 10. | The single most valuable input. Shows exactly what voice, format, and topics work for their audience. |
-| **Content calendar** | Output from `/content-calendar` skill, or a list of post topics/concepts for the batch. | Defines what to write. Without it, this skill generates topics and captions together — slower and less focused. |
+| **Content calendar** | Output from `/context-forge:content-calendar` skill, or a list of post topics/concepts for the batch. | Defines what to write. Without it, this skill generates topics and captions together — slower and less focused. |
 | **Platform analytics** | Instagram Insights → export, or screenshot of LinkedIn/Meta analytics dashboard. | Reveals best posting times, top content types, audience demographics. |
 | **Competitor handles** | 2-3 accounts in their niche they admire or compete with. | Used for Phase 2 competitor research. Helps identify what hooks and formats resonate in their specific niche. |
 | **Product/service details** | Any landing page copy, service menu, or product descriptions. | Prevents factual errors in captions. Especially important for service businesses (salons, cafes, tradespeople). |
@@ -208,7 +208,7 @@ CTA:
 [The specific call to action]
 
 VISUAL DIRECTION:
-[1 sentence on what the paired image/video should show — handoff note for /social-creative-designer]
+[1 sentence on what the paired image/video should show — handoff note for /context-forge:social-creative-designer]
 ---
 ```
 
@@ -243,16 +243,16 @@ Present the captions and summary table. Offer:
 
 - **Best-performers are the highest-value input** — if a client has an active Instagram, push to get their top 10 posts by saves or reach before writing anything. The signal is in what already worked for their audience.
 - **Batch writing is the real workflow** — SMBs need a month of content, not one caption. Default to batch mode unless they ask for a single post.
-- **Visual direction field matters** — this is the handoff note to `/social-creative-designer`. Keep it brief and visual: "close-up of finished result, warm tones, clean background" — not "a beautiful photo showing the amazing transformation."
+- **Visual direction field matters** — this is the handoff note to `/context-forge:social-creative-designer`. Keep it brief and visual: "close-up of finished result, warm tones, clean background" — not "a beautiful photo showing the amazing transformation."
 - **Hashtag best practice (2025/2026)** — 3-10 targeted hashtags on Instagram. The 30-hashtag approach is dead. Quality over quantity.
-- **If no brand-style.md exists** — run `/brand-onboarding` first. Writing without brand context produces generic output that won't match the brand's real voice.
+- **If no brand-style.md exists** — run `/context-forge:brand-onboarding` first. Writing without brand context produces generic output that won't match the brand's real voice.
 - **No tools available?** — Baseline mode still produces strong output from brand-style.md and best-performers alone. State the assumption and move forward.
 
 ---
 
 ## Related Skills
 
-- `/brand-onboarding` — Run first to create brand-style.md if it doesn't exist
-- `/content-calendar` — Produces the post topics this skill writes captions for
-- `/social-creative-designer` — Turns captions into visual assets (uses the Visual Direction field)
+- `/context-forge:brand-onboarding` — Run first to create brand-style.md if it doesn't exist
+- `/context-forge:content-calendar` — Produces the post topics this skill writes captions for
+- `/context-forge:social-creative-designer` — Turns captions into visual assets (uses the Visual Direction field)
 - `/social-content` — General social media strategy and platform advice

@@ -1,7 +1,7 @@
 ---
 name: threads-writer
 version: 1.0.0
-description: Threads Content Specialist. Writes Threads-native posts — short, direct, opinion-led, made for conversation. Strictly enforces the 500 character limit with a count on every post. Supports standalone posts and threads (connected posts). Reads brand-style.md and content-calendar.md. Flags infographic opportunities for /publisher. Output to outputs/threads/.
+description: Threads Content Specialist. Writes Threads-native posts — short, direct, opinion-led, made for conversation. Strictly enforces the 500 character limit with a count on every post. Supports standalone posts and threads (connected posts). Reads brand-style.md and content-calendar.md. Flags infographic opportunities for /context-forge:publisher. Output to outputs/threads/.
 ---
 
 # Threads Writer
@@ -22,7 +22,7 @@ State clearly at the start of every session which inputs are available and which
 |---|---|---|
 | **Existing Threads posts** | Screenshot or paste their recent Threads posts | The highest-value input. Threads voice is distinct from Instagram — their actual Threads content prevents you from writing in an Instagram register. |
 | **Threads accounts they like** | Any accounts — in their niche or outside — whose Threads style they admire | X voice reference if their own Threads content doesn't exist yet. |
-| **Content calendar** | Output from `/content-calendar`, or a topic list | Defines what to write. If `context/content-calendar.md` exists, use it. |
+| **Content calendar** | Output from `/context-forge:content-calendar`, or a topic list | Defines what to write. If `context/content-calendar.md` exists, use it. |
 | **Best-performing posts** | Their top Instagram or social posts by engagement | Reveals what topics resonate with their audience, even if format differs. |
 
 Save client-provided content to:
@@ -114,7 +114,7 @@ For each calendar post that is a product/visual post, adapt it: what take, obser
 
 **BLOTATO FLAG — apply to every post:**
 
-Add a `BLOTATO FLAG:` field at the end of each post. This is a handoff note to `/publisher` — no infographic is generated here.
+Add a `BLOTATO FLAG:` field at the end of each post. This is a handoff note to `/context-forge:publisher` — no infographic is generated here.
 
 Flag `Yes` when the post:
 - Contains a stat, data point, or number that would land better visually
@@ -218,7 +218,7 @@ Present the posts and summary table. Offer:
 
 ## Related Skills
 
-- `/brand-onboarding` — Run first to create `context/brand-style.md` if it doesn't exist
-- `/content-calendar` — Produces the post topics this skill writes Threads posts for
-- `/publisher` — Reads the BLOTATO FLAG field, generates infographics, and schedules posts via Blotato
-- `/social-media-manager` — Orchestrates via Route F (Platform-Specific Content)
+- `/context-forge:brand-onboarding` — Run first to create `context/brand-style.md` if it doesn't exist
+- `/context-forge:content-calendar` — Produces the post topics this skill writes Threads posts for
+- `/context-forge:publisher` — Reads the BLOTATO FLAG field, generates infographics, and schedules posts via Blotato
+- `/context-forge:social-media-manager` — Orchestrates via Route F (Platform-Specific Content)

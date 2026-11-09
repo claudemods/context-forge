@@ -51,9 +51,9 @@ licenses/         upstream licenses
 
 - EGM skills are user-invoked only (`disable-model-invocation: true`); `forge` reads and follows them in-thread. Reviews need a harness that can spawn fresh subagents.
 - Run ICM workspaces from a copy in your own project, not inside the plugin cache.
-- Social skills refer to each other as `/skill-name`; in the plugin the real name is `/context-forge:skill-name`. Going through `forge` avoids the mismatch.
+- Social skills call each other as `/context-forge:<skill>`.
 - The social media skills use optional MCP tools (image generation, Blotato scheduling); see `docs/social/SETUP.md`.
 
 ## Credits and licenses
 
-Context Forge bundles work by others, each under its own license: Karpathy skills (MIT), icm-architect and ICM workspaces (MIT), Elephant-Goldfish Model by Google (Apache-2.0, not an officially supported Google product), and social-ai-team (license unconfirmed). See [NOTICE.md](NOTICE.md) and [licenses/](licenses/).
+Context Forge bundles work by others, each under its own license: Karpathy skills (MIT), icm-architect and ICM workspaces (MIT), Elephant-Goldfish Model by Google (Apache-2.0, not an officially supported Google product), and social-ai-team (open source, no license file in the copy). Original glue code is MIT, see [LICENSE](LICENSE). See [NOTICE.md](NOTICE.md) and [licenses/](licenses/).

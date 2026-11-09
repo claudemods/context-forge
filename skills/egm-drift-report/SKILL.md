@@ -8,6 +8,7 @@ description: >-
   user asks to detect drift or check for consistency across all design documents
   or READMEs in a directory.
 ---
+<!-- Modified by claudemods for Context Forge: command prefix /egm: -> /context-forge:, doc paths moved to docs/egm/. Original (c) 2026 Google LLC, Apache-2.0. -->
 
 # Detect Drift In Designs and Code
 

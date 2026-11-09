@@ -9,6 +9,7 @@ description: >-
   Produces an RFC summary for human review or more detailed design with
   egm-draft.
 ---
+<!-- Modified by claudemods for Context Forge: command prefix /egm: -> /context-forge:, doc paths moved to docs/egm/. Original (c) 2026 Google LLC, Apache-2.0. -->
 
 # EGM Brainstorm: Interactive Multi-Lens Ideation & Refinement
 

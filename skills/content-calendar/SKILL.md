@@ -1,7 +1,7 @@
 ---
 name: content-calendar
 version: 1.0.0
-description: Builds a month of social media post ideas for SMBs. Takes brand context, platforms, and goals and produces a structured content calendar with post topics, formats, angles, and visual direction for each slot. Output saves to context/content-calendar.md for use by /caption-writer and /social-creative-designer. Supports Instagram, LinkedIn, Facebook, TikTok, and X.
+description: Builds a month of social media post ideas for SMBs. Takes brand context, platforms, and goals and produces a structured content calendar with post topics, formats, angles, and visual direction for each slot. Output saves to context/content-calendar.md for use by /context-forge:caption-writer and /context-forge:social-creative-designer. Supports Instagram, LinkedIn, Facebook, TikTok, and X.
 ---
 
 # Content Calendar
@@ -52,7 +52,7 @@ Read the following files if they exist:
 - `.claude/product-marketing-context.md` — product, audience, positioning, revenue goals
 - `context/social-strategy.md` — platform strategy and pillar ratios (output from `/social-strategy` if it has been run)
 
-Log what is available and what is missing. If `brand-style.md` does not exist, run `/brand-onboarding` first — the content calendar cannot be built without knowing the brand's content pillars and platform presence.
+Log what is available and what is missing. If `brand-style.md` does not exist, run `/context-forge:brand-onboarding` first — the content calendar cannot be built without knowing the brand's content pillars and platform presence.
 
 ---
 
@@ -180,7 +180,7 @@ Objective: [awareness / engagement / enquiries / sales]
 
 Topic: [specific topic — not vague. "3 things clients wish they knew before their first appointment" not "educational post"]
 Angle: [the specific hook direction or POV — what makes this take interesting or scroll-stopping]
-Visual direction: [1 sentence on what the image/video should show — handoff for /social-creative-designer]
+Visual direction: [1 sentence on what the image/video should show — handoff for /context-forge:social-creative-designer]
 Notes: [any special instructions, timing, or campaign context]
 ```
 
@@ -206,7 +206,7 @@ Present all post entries in full detail (the format from Phase 4).
 
 Save the complete calendar to: `context/content-calendar.md`
 
-This file is read directly by `/caption-writer` — keep the formatting clean and consistent.
+This file is read directly by `/context-forge:caption-writer` — keep the formatting clean and consistent.
 
 ### 4. Handoff note
 
@@ -216,8 +216,8 @@ After saving, output:
 Content calendar saved to context/content-calendar.md.
 
 Next steps:
-- Run /caption-writer to write captions for this calendar
-- Run /social-creative-designer for posts that need visual assets
+- Run /context-forge:caption-writer to write captions for this calendar
+- Run /context-forge:social-creative-designer for posts that need visual assets
 - Total posts this month: [n]
 - Formats requiring visuals: [n carousels, n single images, n reels]
 ```
@@ -251,8 +251,8 @@ Regenerate the output file after any changes are accepted.
 
 ## Related Skills
 
-- `/brand-onboarding` — Run first to create brand-style.md including content pillars
-- `/caption-writer` — Reads context/content-calendar.md and writes captions for each post
-- `/social-creative-designer` — Creates visual assets using the Visual Direction field from each post
+- `/context-forge:brand-onboarding` — Run first to create brand-style.md including content pillars
+- `/context-forge:caption-writer` — Reads context/content-calendar.md and writes captions for each post
+- `/context-forge:social-creative-designer` — Creates visual assets using the Visual Direction field from each post
 - `/social-content` — General social media strategy and platform advice
 - `/social-strategy` — (Planned) Platform strategy and pillar definition — will feed into this skill when built

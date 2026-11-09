@@ -8,6 +8,7 @@ description: >-
   items via UI multiple-choice gates, and presents interactive
   negotiation/re-sync checkpoints.
 ---
+<!-- Modified by claudemods for Context Forge: command prefix /egm: -> /context-forge:, doc paths moved to docs/egm/. Original (c) 2026 Google LLC, Apache-2.0. -->
 
 # Goldfish Review: Resolve
 

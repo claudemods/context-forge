@@ -16,19 +16,19 @@ You do not replace the component skills — you direct them. When a phase requir
 
 ```
 LAYER 1 — FOUNDATION
-  /brand-onboarding  →  context/brand-style.md    (run once per client)
-  /content-calendar  →  context/content-calendar.md  (run monthly)
+  /context-forge:brand-onboarding  →  context/brand-style.md    (run once per client)
+  /context-forge:content-calendar  →  context/content-calendar.md  (run monthly)
 
 LAYER 2 — CONTENT CREATION  (run monthly, after calendar)
-  /caption-writer           →  outputs/captions/    (Instagram, Facebook, multi-platform)
-  /social-creative-designer →  outputs/creatives/   (branded visuals via Nano Banana)
-  /linkedin-writer          →  outputs/linkedin/    (LinkedIn-native posts)
-  /threads-writer           →  outputs/threads/     (Threads posts)
-  /x-writer                 →  outputs/x/           (X/Twitter posts)
+  /context-forge:caption-writer           →  outputs/captions/    (Instagram, Facebook, multi-platform)
+  /context-forge:social-creative-designer →  outputs/creatives/   (branded visuals via Nano Banana)
+  /context-forge:linkedin-writer          →  outputs/linkedin/    (LinkedIn-native posts)
+  /context-forge:threads-writer           →  outputs/threads/     (Threads posts)
+  /context-forge:x-writer                 →  outputs/x/           (X/Twitter posts)
 
 LAYER 3 — DISTRIBUTION & REVIEW
-  /publisher                →  Blotato (scheduling + infographic visuals)  [optional]
-  /social-performance-review →  outputs/reviews/   (run end of month)
+  /context-forge:publisher                →  Blotato (scheduling + infographic visuals)  [optional]
+  /context-forge:social-performance-review →  outputs/reviews/   (run end of month)
                                       ↓
                             context/best-performers.md
                             (feeds back into next month's content)
@@ -86,10 +86,10 @@ Then offer the relevant options based on what's missing or next:
 ### Route A — New Client Setup
 **Trigger:** `brand-style.md` does not exist
 
-> "This looks like a new client. We need to set up their brand before we can build content. This runs `/brand-onboarding` to capture their visual identity and content pillars, then builds their first content calendar."
+> "This looks like a new client. We need to set up their brand before we can build content. This runs `/context-forge:brand-onboarding` to capture their visual identity and content pillars, then builds their first content calendar."
 
 Steps:
-1. Run `/brand-onboarding`
+1. Run `/context-forge:brand-onboarding`
 2. Once `brand-style.md` is confirmed, continue to Route B
 
 ---
@@ -100,12 +100,12 @@ Steps:
 > "Brand is set up. Ready to build this month's content. This will run the calendar, then captions, then flag which posts need visuals."
 
 Steps:
-1. Run `/content-calendar` → produces `context/content-calendar.md`
+1. Run `/context-forge:content-calendar` → produces `context/content-calendar.md`
 2. Pause — present the calendar summary. Ask: "Does this calendar look right before we write captions?"
-3. On approval, run `/caption-writer` → produces `outputs/captions/[client]-captions-[month]-[year].md`
+3. On approval, run `/context-forge:caption-writer` → produces `outputs/captions/[client]-captions-[month]-[year].md`
 4. Pause — present the caption summary table. Ask: "Any captions you want adjusted before we move to visuals?"
 5. On approval, identify which posts need visual assets (posts with a Visual Direction field)
-6. Run `/social-creative-designer` for each post that needs a visual — sequentially, one post at a time
+6. Run `/context-forge:social-creative-designer` for each post that needs a visual — sequentially, one post at a time
 7. After all visuals complete, produce the monthly handoff summary (Phase 5)
 
 ---
@@ -116,10 +116,10 @@ Steps:
 > "Ready to review last month's performance and feed the learnings into next month's calendar."
 
 Steps:
-1. Run `/social-performance-review` → produces `outputs/reviews/[client]-review-[month]-[year].md`
+1. Run `/context-forge:social-performance-review` → produces `outputs/reviews/[client]-review-[month]-[year].md`
 2. Pause — present key insights and recommendations
 3. Ask: "Do you want to build next month's calendar now, incorporating these recommendations?"
-4. If yes, run `/content-calendar` with the review recommendations as an additional input
+4. If yes, run `/context-forge:content-calendar` with the review recommendations as an additional input
 5. Update `context/workflow-status.md`
 
 ---
@@ -149,12 +149,12 @@ Steps:
 1. Confirm which platform(s) — LinkedIn, Threads, X, or a combination
 2. Confirm `context/content-calendar.md` exists and is current — or offer to build the calendar first before writing platform-specific posts
 3. Run the relevant specialist skill(s) in sequence:
-   - `/linkedin-writer` → `outputs/linkedin/`
-   - `/threads-writer` → `outputs/threads/`
-   - `/x-writer` → `outputs/x/`
+   - `/context-forge:linkedin-writer` → `outputs/linkedin/`
+   - `/context-forge:threads-writer` → `outputs/threads/`
+   - `/context-forge:x-writer` → `outputs/x/`
 4. Pause after each skill completes — present the output summary. Ask: "Any posts you want adjusted before we move to publishing?"
 5. On approval, ask: "Do you want to schedule these via Blotato, or handle publishing manually?"
-6. If **Blotato**: run `/publisher` — it handles the setup check, infographic generation, and scheduling
+6. If **Blotato**: run `/context-forge:publisher` — it handles the setup check, infographic generation, and scheduling
 7. If **manually**: produce the Monthly Handoff Summary (Phase 5) with publishing notes
 
 ---
@@ -164,18 +164,18 @@ Steps:
 When invoking a component skill, follow this pattern:
 
 1. **Announce** what skill is being invoked and why:
-   > "Running /content-calendar now — building the post plan for [month]."
+   > "Running /context-forge:content-calendar now — building the post plan for [month]."
 
 2. **Invoke the skill** — read its SKILL.md and execute its full instruction set, maintaining all of its phases and outputs exactly as designed.
-   - `/brand-onboarding` → `~/.claude/skills/brand-onboarding/SKILL.md`
-   - `/content-calendar` → `~/.claude/skills/content-calendar/SKILL.md`
-   - `/caption-writer` → `~/.claude/skills/caption-writer/SKILL.md`
-   - `/social-creative-designer` → `~/.claude/skills/social-creative-designer/SKILL.md`
-   - `/linkedin-writer` → `~/.claude/skills/linkedin-writer/SKILL.md`
-   - `/threads-writer` → `~/.claude/skills/threads-writer/SKILL.md`
-   - `/x-writer` → `~/.claude/skills/x-writer/SKILL.md`
-   - `/publisher` → `~/.claude/skills/publisher/SKILL.md`
-   - `/social-performance-review` → `~/.claude/skills/social-performance-review/SKILL.md`
+   - `/context-forge:brand-onboarding` → `${CLAUDE_PLUGIN_ROOT}/skills/brand-onboarding/SKILL.md`
+   - `/context-forge:content-calendar` → `${CLAUDE_PLUGIN_ROOT}/skills/content-calendar/SKILL.md`
+   - `/context-forge:caption-writer` → `${CLAUDE_PLUGIN_ROOT}/skills/caption-writer/SKILL.md`
+   - `/context-forge:social-creative-designer` → `${CLAUDE_PLUGIN_ROOT}/skills/social-creative-designer/SKILL.md`
+   - `/context-forge:linkedin-writer` → `${CLAUDE_PLUGIN_ROOT}/skills/linkedin-writer/SKILL.md`
+   - `/context-forge:threads-writer` → `${CLAUDE_PLUGIN_ROOT}/skills/threads-writer/SKILL.md`
+   - `/context-forge:x-writer` → `${CLAUDE_PLUGIN_ROOT}/skills/x-writer/SKILL.md`
+   - `/context-forge:publisher` → `${CLAUDE_PLUGIN_ROOT}/skills/publisher/SKILL.md`
+   - `/context-forge:social-performance-review` → `${CLAUDE_PLUGIN_ROOT}/skills/social-performance-review/SKILL.md`
 
 3. **On completion**, return to this orchestration layer:
    > "[Skill name] complete. [One sentence summary of what was produced.]"
@@ -191,15 +191,15 @@ At each handoff, verify the output file from the completed skill before proceedi
 
 | Completed skill | Output to verify | Input it feeds |
 |---|---|---|
-| `/brand-onboarding` | `context/brand-style.md` exists and contains content pillars | `/content-calendar` |
-| `/content-calendar` | `context/content-calendar.md` exists with full post entries | `/caption-writer`, platform specialists |
-| `/caption-writer` | `outputs/captions/` file exists with all posts and Visual Direction fields | `/social-creative-designer` |
-| `/social-creative-designer` | `outputs/creatives/` contains the expected image files | Monthly handoff |
-| `/linkedin-writer` | `outputs/linkedin/` file exists with all posts and BLOTATO FLAG fields | `/publisher` |
-| `/threads-writer` | `outputs/threads/` file exists with all posts and BLOTATO FLAG fields | `/publisher` |
-| `/x-writer` | `outputs/x/` file exists with all posts and BLOTATO FLAG fields | `/publisher` |
-| `/publisher` | Scheduling confirmed in Blotato, summary shown | `context/workflow-status.md` publishing fields |
-| `/social-performance-review` | `outputs/reviews/` file exists, `context/best-performers.md` updated | Next `/content-calendar` |
+| `/context-forge:brand-onboarding` | `context/brand-style.md` exists and contains content pillars | `/context-forge:content-calendar` |
+| `/context-forge:content-calendar` | `context/content-calendar.md` exists with full post entries | `/context-forge:caption-writer`, platform specialists |
+| `/context-forge:caption-writer` | `outputs/captions/` file exists with all posts and Visual Direction fields | `/context-forge:social-creative-designer` |
+| `/context-forge:social-creative-designer` | `outputs/creatives/` contains the expected image files | Monthly handoff |
+| `/context-forge:linkedin-writer` | `outputs/linkedin/` file exists with all posts and BLOTATO FLAG fields | `/context-forge:publisher` |
+| `/context-forge:threads-writer` | `outputs/threads/` file exists with all posts and BLOTATO FLAG fields | `/context-forge:publisher` |
+| `/context-forge:x-writer` | `outputs/x/` file exists with all posts and BLOTATO FLAG fields | `/context-forge:publisher` |
+| `/context-forge:publisher` | Scheduling confirmed in Blotato, summary shown | `context/workflow-status.md` publishing fields |
+| `/context-forge:social-performance-review` | `outputs/reviews/` file exists, `context/best-performers.md` updated | Next `/context-forge:content-calendar` |
 
 If an output file is missing or incomplete, resolve it before moving to the next skill — do not silently proceed with a broken handoff.
 
@@ -207,11 +207,11 @@ If an output file is missing or incomplete, resolve it before moving to the next
 
 ## Phase 4 — Visual Asset Coordination
 
-`/social-creative-designer` is run per-post, not for the whole batch at once. After captions are approved:
+`/context-forge:social-creative-designer` is run per-post, not for the whole batch at once. After captions are approved:
 
 1. List all posts that have a Visual Direction field in the caption file
 2. Confirm with the operator: which posts need AI-generated visuals vs client photos (Brand mode)?
-3. Run `/social-creative-designer` for each post — one at a time, in calendar order
+3. Run `/context-forge:social-creative-designer` for each post — one at a time, in calendar order
 4. After each image is approved, move to the next post
 5. Track which posts have completed visuals and which are still pending
 
@@ -256,8 +256,8 @@ NEXT ACTIONS FOR CLIENT
   □ At end of month: share analytics for performance review
 
 NEXT ACTIONS FOR OPERATOR
-  □ End-of-month: run /social-performance-review
-  □ Start of next month: run /social-media-manager to build next calendar
+  □ End-of-month: run /context-forge:social-performance-review
+  □ Start of next month: run /context-forge:social-media-manager to build next calendar
 ```
 
 ---
@@ -302,30 +302,30 @@ This file is the first thing read in Phase 0 — it makes resuming mid-workflow 
 - **The review feeds the next month** — the performance review is not just a report; it changes the pillar ratios and format mix for the next calendar. Don't skip it, and always run it before building the next month's calendar if review data is available.
 - **Mid-workflow recovery** — if a session ends mid-workflow, `context/workflow-status.md` tells you exactly where to resume. Never restart from scratch.
 - **Route E (specific tasks) is the most common daily use** — most sessions won't be full-pipeline runs. The operator will ask for one caption, one image, or a calendar tweak. Use the right component skill directly.
-- **Use Route F for LinkedIn, Threads, and X content — not Route B.** `/caption-writer` is designed for Instagram and Facebook. The platform specialists (`/linkedin-writer`, `/threads-writer`, `/x-writer`) write from first principles for each platform and produce significantly better output. Don't use caption-writer for LinkedIn or X content.
-- **/publisher requires Blotato.** If the client handles their own scheduling via Later, Buffer, or the native platform, skip `/publisher` entirely and use the Monthly Handoff Summary to hand over the output files. `/publisher` is an optional layer — the rest of the workflow runs without it.
+- **Use Route F for LinkedIn, Threads, and X content — not Route B.** `/context-forge:caption-writer` is designed for Instagram and Facebook. The platform specialists (`/context-forge:linkedin-writer`, `/context-forge:threads-writer`, `/context-forge:x-writer`) write from first principles for each platform and produce significantly better output. Don't use caption-writer for LinkedIn or X content.
+- **/context-forge:publisher requires Blotato.** If the client handles their own scheduling via Later, Buffer, or the native platform, skip `/context-forge:publisher` entirely and use the Monthly Handoff Summary to hand over the output files. `/context-forge:publisher` is an optional layer — the rest of the workflow runs without it.
 
 ---
 
 ## Skill Relationships
 
 ```
-/social-media-manager  (this skill — orchestrator)
+/context-forge:social-media-manager  (this skill — orchestrator)
     │
     ├── LAYER 1 — FOUNDATION
-    │   ├── /brand-onboarding          (run once per client)
-    │   └── /content-calendar          (run monthly)
+    │   ├── /context-forge:brand-onboarding          (run once per client)
+    │   └── /context-forge:content-calendar          (run monthly)
     │
     ├── LAYER 2 — CONTENT CREATION
-    │   ├── /caption-writer            (Instagram, Facebook, multi-platform)
-    │   ├── /social-creative-designer  (branded visuals — Nano Banana)
-    │   ├── /linkedin-writer           (LinkedIn-native posts)
-    │   ├── /threads-writer            (Threads posts)
-    │   └── /x-writer                  (X/Twitter posts)
+    │   ├── /context-forge:caption-writer            (Instagram, Facebook, multi-platform)
+    │   ├── /context-forge:social-creative-designer  (branded visuals — Nano Banana)
+    │   ├── /context-forge:linkedin-writer           (LinkedIn-native posts)
+    │   ├── /context-forge:threads-writer            (Threads posts)
+    │   └── /context-forge:x-writer                  (X/Twitter posts)
     │
     └── LAYER 3 — DISTRIBUTION & REVIEW
-        ├── /publisher                 (Blotato scheduling + infographics)
-        └── /social-performance-review (run end of month)
+        ├── /context-forge:publisher                 (Blotato scheduling + infographics)
+        └── /context-forge:social-performance-review (run end of month)
 
 Supporting context (read by all skills):
     ├── context/brand-style.md

@@ -21,7 +21,7 @@ State clearly at the start of every session which inputs are available and which
 | Input | How to get it | Why it matters |
 |---|---|---|
 | **Existing LinkedIn posts** | Screenshot or paste their recent LinkedIn posts | The highest-value input for LinkedIn specifically. LinkedIn voice differs sharply from Instagram — seeing their actual LinkedIn content prevents you from writing in their Instagram register. |
-| **Content calendar** | Output from `/content-calendar`, or a list of post topics | Defines what to write. If `context/content-calendar.md` exists, use it. |
+| **Content calendar** | Output from `/context-forge:content-calendar`, or a list of post topics | Defines what to write. If `context/content-calendar.md` exists, use it. |
 | **Best-performing posts** | From LinkedIn Analytics → sort by impressions or engagement | Shows what topics and formats land for their specific LinkedIn audience. |
 | **Competitor LinkedIn handles** | 2-3 accounts in their niche they admire or compete with | Used for competitor research. Shows what hooks and formats resonate in their niche on LinkedIn specifically. |
 | **Professional positioning** | One sentence: what they do, who for, what outcome | Prevents generic posts that could apply to any business in the industry. |
@@ -79,7 +79,7 @@ Establish scope:
 Are there competitor LinkedIn accounts worth researching? If yes and Firecrawl/Playwright is available, run competitor analysis before writing.
 
 **4. Blotato infographic flagging**
-Flag posts that would benefit from an infographic visual (for `/publisher` to generate via Blotato)? Default: yes. Confirm or override.
+Flag posts that would benefit from an infographic visual (for `/context-forge:publisher` to generate via Blotato)? Default: yes. Confirm or override.
 
 ---
 
@@ -141,7 +141,7 @@ Write each post to this structure:
 
 **BLOTATO FLAG — apply to every post:**
 
-Add a `BLOTATO FLAG:` field at the end of each post. This is a handoff note to `/publisher` — no infographic is generated here.
+Add a `BLOTATO FLAG:` field at the end of each post. This is a handoff note to `/context-forge:publisher` — no infographic is generated here.
 
 Flag `Yes` when the post contains:
 - A stat, data point, or number that would land better visually
@@ -153,7 +153,7 @@ Flag `Yes` when the post contains:
 Flag `No` when the post is:
 - Conversational or story-led
 - Opinion-only with no supporting data or structure
-- Paired with a personal photo (Brand mode from `/social-creative-designer`)
+- Paired with a personal photo (Brand mode from `/context-forge:social-creative-designer`)
 
 Visual types to suggest:
 - `stat card` — for posts anchored by a number or data point
@@ -229,14 +229,14 @@ Present the posts and summary table. Offer:
 - **Calendar posts designed for visual platforms need conversion.** A "product showcase" post or a "lifestyle shoot" post from the content calendar will not land on LinkedIn in its original form. Convert these to the story, expertise, or insight behind the product. Ask: what does this post teach the reader? What opinion does it express?
 - **First-person is non-negotiable.** Corporate "we" voice almost never performs well on LinkedIn for SMBs. The audience is connecting with the person behind the business, not the business itself.
 - **3–5 hashtags only.** LinkedIn has de-prioritised hashtag stuffing. Relevance over volume.
-- **The Blotato flag is a handoff note.** No infographic is generated in this skill. `/publisher` reads the flag and offers to generate the visual before scheduling.
+- **The Blotato flag is a handoff note.** No infographic is generated in this skill. `/context-forge:publisher` reads the flag and offers to generate the visual before scheduling.
 - **If no LinkedIn posts exist as reference** — write from the brand's general voice, then calibrate from engagement data after the first month. The first batch is always a calibration exercise.
 
 ---
 
 ## Related Skills
 
-- `/brand-onboarding` — Run first to create `context/brand-style.md` if it doesn't exist
-- `/content-calendar` — Produces the post topics this skill writes LinkedIn posts for
-- `/publisher` — Reads the BLOTATO FLAG field, generates infographics, and schedules posts via Blotato
-- `/social-media-manager` — Orchestrates via Route F (Platform-Specific Content)
+- `/context-forge:brand-onboarding` — Run first to create `context/brand-style.md` if it doesn't exist
+- `/context-forge:content-calendar` — Produces the post topics this skill writes LinkedIn posts for
+- `/context-forge:publisher` — Reads the BLOTATO FLAG field, generates infographics, and schedules posts via Blotato
+- `/context-forge:social-media-manager` — Orchestrates via Route F (Platform-Specific Content)

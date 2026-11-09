@@ -9,4 +9,4 @@ Context Forge bundles unmodified-in-substance copies of these projects, with pat
 
 The Karpathy skills upstream ships no LICENSE file in the copy provided; its plugin manifest declares MIT.
 
-- social-ai-team (10 social media skills + setup docs), copied from `social-ai-team-main`. The copy had no LICENSE file and no stated author, so its license terms are unconfirmed. Its `install.sh` / `install.bat` were not included (the plugin install replaces them). Inside the plugin its skills are invoked as `/context-forge:<skill>`; text inside those skills that says `/skill-name` or "~/.claude/skills" refers to the standalone install.
+- social-ai-team (10 social media skills + setup docs), copied from `social-ai-team-main`. The copy carried no LICENSE file; the repository owner states it is open source. Its `install.sh` / `install.bat` were not included. Skill references were changed from `/skill` and `~/.claude/skills` to `/context-forge:skill` and `${CLAUDE_PLUGIN_ROOT}`.

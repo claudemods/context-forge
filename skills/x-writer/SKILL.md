@@ -22,7 +22,7 @@ State clearly at the start of every session which inputs are available and which
 |---|---|---|
 | **Existing X posts** | Screenshot or paste their recent X posts | X voice is the most persona-specific of all platforms. Seeing their actual X content is the highest-value calibration input. |
 | **X accounts they admire** | 2-3 accounts in their niche — or outside it — whose X style they find compelling | If no X history exists, this is the only way to establish a voice target. Essential for new accounts. |
-| **Content calendar** | Output from `/content-calendar`, or a topic list | Defines what to write. If `context/content-calendar.md` exists, use it. |
+| **Content calendar** | Output from `/context-forge:content-calendar`, or a topic list | Defines what to write. If `context/content-calendar.md` exists, use it. |
 | **Best-performing posts** | Their top posts from any platform, by engagement | Reveals what topics and angles work for their audience, even if format differs. |
 
 Save client-provided content to:
@@ -140,7 +140,7 @@ For calendar posts that are product/visual-focused: extract the angle, take, or 
 
 **BLOTATO FLAG — apply to every post:**
 
-Add a `BLOTATO FLAG:` field at the end of each post (or thread). This is a handoff note to `/publisher` — no infographic is generated here.
+Add a `BLOTATO FLAG:` field at the end of each post (or thread). This is a handoff note to `/context-forge:publisher` — no infographic is generated here.
 
 Flag `Yes` when the post:
 - Contains a stat, data point, or number that would land better as a visual
@@ -243,7 +243,7 @@ Present the posts and summary table. Offer:
 
 ## Related Skills
 
-- `/brand-onboarding` — Run first to create `context/brand-style.md` if it doesn't exist
-- `/content-calendar` — Produces the post topics this skill writes X posts for
-- `/publisher` — Reads the BLOTATO FLAG field, generates infographics, and schedules posts via Blotato
-- `/social-media-manager` — Orchestrates via Route F (Platform-Specific Content)
+- `/context-forge:brand-onboarding` — Run first to create `context/brand-style.md` if it doesn't exist
+- `/context-forge:content-calendar` — Produces the post topics this skill writes X posts for
+- `/context-forge:publisher` — Reads the BLOTATO FLAG field, generates infographics, and schedules posts via Blotato
+- `/context-forge:social-media-manager` — Orchestrates via Route F (Platform-Specific Content)

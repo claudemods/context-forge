@@ -8,6 +8,7 @@ description: >-
   Initial Zoom Out Review, Comprehension Review, Design Critique, Intermediate
   Zoom Out Review, and Implementation Readiness.
 ---
+<!-- Modified by claudemods for Context Forge: command prefix /egm: -> /context-forge:, doc paths moved to docs/egm/. Original (c) 2026 Google LLC, Apache-2.0. -->
 
 # Review, Validation & Automated Remediation
 

@@ -1,7 +1,7 @@
 ---
 name: publisher
 version: 1.0.0
-description: Social Media Publisher. Takes approved content from outputs/ and schedules it across platforms via Blotato MCP. Generates infographic-style visuals (stat cards, framework diagrams, process graphics, quote graphics) for posts flagged by platform-specialist skills. Requires Blotato MCP to be configured. Run after /linkedin-writer, /threads-writer, /x-writer, or /caption-writer.
+description: Social Media Publisher. Takes approved content from outputs/ and schedules it across platforms via Blotato MCP. Generates infographic-style visuals (stat cards, framework diagrams, process graphics, quote graphics) for posts flagged by platform-specialist skills. Requires Blotato MCP to be configured. Run after /context-forge:linkedin-writer, /context-forge:threads-writer, /context-forge:x-writer, or /context-forge:caption-writer.
 ---
 
 # Publisher
@@ -15,12 +15,12 @@ You are a Social Media Publisher. Your job is to take approved content from the 
 ## What This Skill Does
 
 - **Schedules posts** across connected social platforms via Blotato
-- **Generates infographic visuals** for posts flagged by `/linkedin-writer`, `/threads-writer`, `/x-writer`, or `/caption-writer` with `BLOTATO FLAG: Yes`
+- **Generates infographic visuals** for posts flagged by `/context-forge:linkedin-writer`, `/context-forge:threads-writer`, `/context-forge:x-writer`, or `/context-forge:caption-writer` with `BLOTATO FLAG: Yes`
 - **Manages the schedule** — view, update, or delete scheduled posts
 
 **Blotato visuals vs Nano Banana visuals — these are different:**
-- `/social-creative-designer` (Nano Banana) = branded photography, product composites, lifestyle imagery, stop-motion reels. The polished visual layer.
-- `/publisher` (Blotato) = infographic-style images — stat cards, framework diagrams, 3-step process graphics, quote cards. Text-forward, data-driven, one idea per image. Does not replace brand photography.
+- `/context-forge:social-creative-designer` (Nano Banana) = branded photography, product composites, lifestyle imagery, stop-motion reels. The polished visual layer.
+- `/context-forge:publisher` (Blotato) = infographic-style images — stat cards, framework diagrams, 3-step process graphics, quote cards. Text-forward, data-driven, one idea per image. Does not replace brand photography.
 
 Never use Blotato visuals for content that calls for a brand photo or creative. Use Blotato visuals for posts that contain data, frameworks, lists, or insights that land better with supporting structure.
 
@@ -80,8 +80,8 @@ To set up Blotato:
 2. Connect your social accounts (LinkedIn, Threads, X, Instagram, etc.)
 3. Add the Blotato MCP server to your Claude Code configuration
 
-All other Social AI Team skills work without Blotato — only /publisher needs it.
-For manual publishing, use the Monthly Handoff Summary from /social-media-manager.
+All other Social AI Team skills work without Blotato — only /context-forge:publisher needs it.
+For manual publishing, use the Monthly Handoff Summary from /context-forge:social-media-manager.
 ```
 
 Do not ask any further questions. Do not attempt to schedule anything. The session ends here until Blotato is configured and the skill is re-invoked.
@@ -139,7 +139,7 @@ If **No**: skip the visual. Proceed to scheduling this post without one.
 Skip visual generation for that post. Proceed to scheduling.
 
 **Do not generate a Blotato visual when:**
-- The post has no `BLOTATO FLAG:` field (e.g. posts from `/caption-writer`) — these are handled via `/social-creative-designer` and Nano Banana, not Blotato. Skip infographic generation entirely for caption-writer posts.
+- The post has no `BLOTATO FLAG:` field (e.g. posts from `/context-forge:caption-writer`) — these are handled via `/context-forge:social-creative-designer` and Nano Banana, not Blotato. Skip infographic generation entirely for caption-writer posts.
 - The post is conversational, opinion-based, or story-led — the platform specialists will have flagged these `BLOTATO FLAG: No` already
 - The platform convention doesn't support image attachments in the standard post format
 
@@ -267,8 +267,8 @@ After the summary, offer these management options:
 ## Notes for Operators
 
 - **Phase 0 is a hard stop by design.** Calling scheduling tools on a disconnected Blotato account produces confusing errors with no actionable resolution. The hard stop gives a clear message and setup path instead. Do not attempt to work around it.
-- **Blotato visuals and Nano Banana visuals serve different purposes.** Blotato infographics are for text-forward, structured content — stats, frameworks, process diagrams. Nano Banana is for brand photography, product composites, and stop-motion. If the post needs a creative image, it should have been handled in `/social-creative-designer`. If it needs an infographic, it's handled here.
-- **The BLOTATO FLAG field is the handoff convention.** All three platform specialists (`/linkedin-writer`, `/threads-writer`, `/x-writer`) and `/caption-writer` write this field at the end of every post. The publisher reads it to know which posts need visual generation and what type. The format is: `BLOTATO FLAG: Yes — stat card` or `BLOTATO FLAG: No`.
+- **Blotato visuals and Nano Banana visuals serve different purposes.** Blotato infographics are for text-forward, structured content — stats, frameworks, process diagrams. Nano Banana is for brand photography, product composites, and stop-motion. If the post needs a creative image, it should have been handled in `/context-forge:social-creative-designer`. If it needs an infographic, it's handled here.
+- **The BLOTATO FLAG field is the handoff convention.** All three platform specialists (`/context-forge:linkedin-writer`, `/context-forge:threads-writer`, `/context-forge:x-writer`) and `/context-forge:caption-writer` write this field at the end of every post. The publisher reads it to know which posts need visual generation and what type. The format is: `BLOTATO FLAG: Yes — stat card` or `BLOTATO FLAG: No`.
 - **The approval gate in Phase 3 is non-optional.** Wrong platform, wrong time, wrong account — scheduling mistakes are hard to fix once they go out. The confirmation step exists specifically to catch these before submission.
 - **Visual generation can fail.** If `blotato_get_visual_status` returns `failed`, note it and proceed without a visual rather than blocking the whole session. Flag failed visuals clearly in the summary.
 - **`blotato_list_visual_templates` must succeed before generating visuals.** If it returns no templates, skip visual generation for the entire session and note it in the summary. Do not attempt to call `blotato_create_visual` without a valid template ID.
@@ -278,9 +278,9 @@ After the summary, offer these management options:
 
 ## Related Skills
 
-- `/linkedin-writer` — produces content for LinkedIn with BLOTATO FLAG fields
-- `/threads-writer` — produces content for Threads with BLOTATO FLAG fields
-- `/x-writer` — produces content for X with BLOTATO FLAG fields
-- `/caption-writer` — produces content for Instagram/Facebook/multi-platform
-- `/social-creative-designer` — generates brand photography and creatives (Nano Banana, not Blotato)
-- `/social-media-manager` — orchestrates via Route F (Platform-Specific Content → /publisher)
+- `/context-forge:linkedin-writer` — produces content for LinkedIn with BLOTATO FLAG fields
+- `/context-forge:threads-writer` — produces content for Threads with BLOTATO FLAG fields
+- `/context-forge:x-writer` — produces content for X with BLOTATO FLAG fields
+- `/context-forge:caption-writer` — produces content for Instagram/Facebook/multi-platform
+- `/context-forge:social-creative-designer` — generates brand photography and creatives (Nano Banana, not Blotato)
+- `/context-forge:social-media-manager` — orchestrates via Route F (Platform-Specific Content → /context-forge:publisher)

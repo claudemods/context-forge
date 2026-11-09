@@ -1,7 +1,7 @@
 ---
 name: brand-onboarding
 version: 1.2.0
-description: Brand onboarding setup skill. Captures a client's visual identity, content patterns, audience, and goals through evidence capture + pre-filled client doc + structured intake. Writes context/brand-style.md as the foundation for all social skills. Run once per client before using /social-creative-designer, /content-calendar, or /caption-writer.
+description: Brand onboarding setup skill. Captures a client's visual identity, content patterns, audience, and goals through evidence capture + pre-filled client doc + structured intake. Writes context/brand-style.md as the foundation for all social skills. Run once per client before using /context-forge:social-creative-designer, /context-forge:content-calendar, or /context-forge:caption-writer.
 ---
 
 # Brand Onboarding
@@ -296,7 +296,7 @@ Present the completed file to the operator and ask:
 
 Make any requested changes. Then confirm:
 
-> "Brand style guide is saved to `context/brand-style.md`. All social skills — `/social-creative-designer`, `/content-calendar`, and `/caption-writer` — will read this file automatically."
+> "Brand style guide is saved to `context/brand-style.md`. All social skills — `/context-forge:social-creative-designer`, `/context-forge:content-calendar`, and `/context-forge:caption-writer` — will read this file automatically."
 
 ---
 
@@ -319,14 +319,14 @@ Make any requested changes. Then confirm:
 - **Always do evidence capture before generating the client doc.** Pre-filling confirmed facts dramatically reduces the client's burden and shows professionalism. A client who sees their own words reflected back corrects less and fills in gaps faster.
 - **The signature content format and real caption examples are the most important inputs** — they're what makes generated content look and sound like the brand's existing feed, not generic AI output.
 - **The colour palette is the second most critical visual input** — one wrong colour in a generated image breaks brand consistency. Estimate from screenshots if needed, mark as "(estimated)".
-- **For product brands:** getting original high-res product photos is non-negotiable for `/social-creative-designer`. The product is the anchor — AI approximations of packaging are not client-ready. Flag this clearly in the asset request.
+- **For product brands:** getting original high-res product photos is non-negotiable for `/context-forge:social-creative-designer`. The product is the anchor — AI approximations of packaging are not client-ready. Flag this clearly in the asset request.
 - **If a Canva Brand Kit or brand guidelines are provided:** use as primary source for Phase 4, reduce Part 3 interview to gap-fillers only.
 - **Do not invent brand details.** Leave unknown values as `[TBC — not provided]`.
-- **The Audience and Social Media Goals sections** feed `/content-calendar` and `/caption-writer` — don't skip them even if the client seems impatient. Without ICP and goals, content pillars and caption angles will be generic.
+- **The Audience and Social Media Goals sections** feed `/context-forge:content-calendar` and `/context-forge:caption-writer` — don't skip them even if the client seems impatient. Without ICP and goals, content pillars and caption angles will be generic.
 
 ## Related Skills
 
-- `/social-creative-designer` — reads `context/brand-style.md` for visual generation
-- `/content-calendar` — reads `brand-style.md` for pillars, audience, and goals
-- `/caption-writer` — reads `brand-style.md` for tone, ICP, and sample captions
+- `/context-forge:social-creative-designer` — reads `context/brand-style.md` for visual generation
+- `/context-forge:content-calendar` — reads `brand-style.md` for pillars, audience, and goals
+- `/context-forge:caption-writer` — reads `brand-style.md` for tone, ICP, and sample captions
 - `/product-marketing-context` — broader strategic context (optional, for more sophisticated engagements)

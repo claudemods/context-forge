@@ -24,7 +24,7 @@ State at the start of every session which data is available and which is missing
 | **LinkedIn post data** | LinkedIn → Analytics → Content → set date to last month → Export (top right). | Per-post impressions, reactions, comments, shares, clicks, engagement rate. |
 | **Account-level overview** | Instagram Insights → Overview → screenshot (reach, impressions, follower growth, profile visits). LinkedIn Analytics → Followers tab → screenshot. | Account health trends. Follower growth, reach trajectory, profile visit intent. |
 | **Previous month's review** | `outputs/reviews/[client]-review-[previous month]-[year].md` if it exists. | Enables month-over-month comparison. Shows whether the last set of recommendations made a difference. |
-| **Last month's content calendar** | `context/content-calendar.md` — the planned calendar from `/content-calendar`. | Allows planned vs actual comparison. Were the right post types planned? Was the calendar followed? |
+| **Last month's content calendar** | `context/content-calendar.md` — the planned calendar from `/context-forge:content-calendar`. | Allows planned vs actual comparison. Were the right post types planned? Was the calendar followed? |
 
 **Data quality levels — the skill adapts to what's available:**
 - **Full data** (CSV export + account overview) → complete analysis with per-post scoring
@@ -237,7 +237,7 @@ How: [what to do in the content calendar or caption approach]
 ```
 
 ### Content calendar adjustments
-Specific changes to feed into the next `/content-calendar` run:
+Specific changes to feed into the next `/context-forge:content-calendar` run:
 - Pillar ratio changes (e.g., increase BTS from 20% to 30%, reduce promotional from 15% to 10%)
 - Format mix changes
 - Hook approach changes
@@ -294,7 +294,7 @@ Structure:
 ### 2. Update context files
 
 **Update `context/best-performers.md`:**
-Add this month's top performers (top 3 by saves or engagement rate). Include: post topic, format, first line of caption, and key metrics. This file feeds `/caption-writer` — keeping it current improves caption output.
+Add this month's top performers (top 3 by saves or engagement rate). Include: post topic, format, first line of caption, and key metrics. This file feeds `/context-forge:caption-writer` — keeping it current improves caption output.
 
 **Append to `context/review-history.md`:**
 Add a one-line entry for this month:
@@ -309,7 +309,7 @@ This builds a running trend log across months.
 Review saved to outputs/reviews/[filename].md
 
 To act on these recommendations:
-- Run /content-calendar for next month — use the pillar and format adjustments above
+- Run /context-forge:content-calendar for next month — use the pillar and format adjustments above
 - Update brand-style.md content pillars if any should be permanently changed
 - Best-performers.md has been updated with this month's top 3 posts
 ```
@@ -342,7 +342,7 @@ Record the score in `context/review-history.md`. Use it to track improvement ove
 
 ## Related Skills
 
-- `/content-calendar` — Acts on the recommendations from this review to build next month's plan
-- `/caption-writer` — Updated `best-performers.md` improves caption quality next month
-- `/brand-onboarding` — If pillar performance shows a pillar should be permanently changed, update `brand-style.md`
+- `/context-forge:content-calendar` — Acts on the recommendations from this review to build next month's plan
+- `/context-forge:caption-writer` — Updated `best-performers.md` improves caption quality next month
+- `/context-forge:brand-onboarding` — If pillar performance shows a pillar should be permanently changed, update `brand-style.md`
 - `/social-content` — General social strategy reference if fundamental questions arise
