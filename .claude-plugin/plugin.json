@@ -2,7 +2,7 @@
   "name": "context-forge",
   "displayName": "Context Forge",
   "version": "1.0.0",
-  "description": "One toolkit for agent work: Karpathy coding guidelines, ICM workspace architect and ready-made ICM workspaces, and the Elephant-Goldfish design/review workflow.",
+  "description": "Five agent toolkits in one plugin: Karpathy coding guidelines, ICM workspace architect and pipelines, Elephant-Goldfish design review, and a social media team. Start with /context-forge:forge.",
   "keywords": ["guidelines", "icm", "context-engineering", "design-review", "workspaces", "skills"],
   "icon": "./.claude-plugin/icon.png",
   "license": "MIT AND Apache-2.0",
