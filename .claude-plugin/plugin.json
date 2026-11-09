@@ -1,0 +1,21 @@
+{
+  "name": "context-forge",
+  "displayName": "Context Forge",
+  "version": "1.0.0",
+  "description": "One toolkit for agent work: Karpathy coding guidelines, ICM workspace architect and ready-made ICM workspaces, and the Elephant-Goldfish design/review workflow.",
+  "keywords": ["guidelines", "icm", "context-engineering", "design-review", "workspaces", "skills"],
+  "icon": "./.claude-plugin/icon.png",
+  "license": "MIT AND Apache-2.0",
+  "agents": [
+    "./.claude-plugin/agents/bootstrap_orchestrator.md",
+    "./.claude-plugin/agents/codebase_details.md",
+    "./.claude-plugin/agents/comprehension.md",
+    "./.claude-plugin/agents/design_critic.md",
+    "./.claude-plugin/agents/implementation_readiness.md",
+    "./.claude-plugin/agents/inventive_catalyst.md",
+    "./.claude-plugin/agents/structural.md",
+    "./.claude-plugin/agents/style.md",
+    "./.claude-plugin/agents/synthesizer.md",
+    "./.claude-plugin/agents/zoom_out.md"
+  ]
+}

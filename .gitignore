@@ -1,0 +1,9 @@
+**/stages/*/output/*
+!**/stages/*/output/.gitkeep
+.claude/
+node_modules/
+__pycache__/
+.DS_Store
+Thumbs.db
+.env
+.env.local

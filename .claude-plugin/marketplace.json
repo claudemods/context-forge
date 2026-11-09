@@ -1,0 +1,11 @@
+{
+  "name": "context-forge",
+  "owner": { "name": "claudemods" },
+  "plugins": [
+    {
+      "name": "context-forge",
+      "source": "./",
+      "description": "Karpathy guidelines + ICM architect and workspaces + Elephant-Goldfish design review, merged into one plugin."
+    }
+  ]
+}
