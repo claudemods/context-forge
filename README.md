@@ -1,6 +1,6 @@
 # Context Forge
 
-Four agent tools merged into one Claude Code plugin with one entry point: `/context-forge:forge`.
+Five agent tools merged into one Claude Code plugin with one entry point: `/context-forge:forge`.
 
 | Source | What it adds here | Skills |
 |---|---|---|
@@ -8,6 +8,8 @@ Four agent tools merged into one Claude Code plugin with one entry point: `/cont
 | icm-architect (Jake Van Clief) | Designs or restructures any process/folder/repo into an ICM workspace; link, index, viz and quote-check scripts | `icm-architect` |
 | [Interpretable-Context-Methodology](https://arxiv.org/abs/2603.16021) | Ready-made pipelines: script-to-animation, voice-driven-animation, course-deck-production, workspace-builder | `icm-workspaces` |
 | [elephant-goldfish-model](https://github.com/google/elephant-goldfish-model) (Google) | Brainstorm, draft and review designs with fresh-context "goldfish" reviewers; bootstrap docs; drift reports | `egm-brainstorm`, `egm-draft`, `egm-review`, `egm-review-loop`, `egm-resolve`, `egm-bootstrap`, `egm-drift-report` + 10 reviewer agents |
+
+| social-ai-team | A social media team for SMBs: brand onboarding, content calendar, captions, LinkedIn/Threads/X writers, creatives, publisher, monthly review | `social-media-manager` + 9 specialists (see `docs/social/`) |
 
 `forge` is the router: describe what you want and it picks the capability (see [skills/forge/SKILL.md](skills/forge/SKILL.md)).
 
@@ -30,6 +32,7 @@ resources/        EGM document standards
 workspaces/       ICM ready-made pipelines
 _core/            ICM conventions and templates (shared by workspaces)
 docs/egm/         EGM harness docs
+docs/social/      Social AI Team setup guide
 licenses/         upstream licenses
 ```
 
@@ -37,6 +40,7 @@ licenses/         upstream licenses
 
 - EGM skills keep `disable-model-invocation: true`; `forge` reads and follows them in-thread. Reviews need a harness that can spawn fresh subagents.
 - Run ICM workspaces from a copy in your own project, not inside the plugin cache.
+- Social AI Team skills reference each other as `/skill-name`; with the plugin install the real names are `/context-forge:skill-name`, or just say what you want via `forge`.
 - The `/context-forge:` prefix replaces the original `/egm:` prefix in all EGM docs and skills.
 
 ## Licensing

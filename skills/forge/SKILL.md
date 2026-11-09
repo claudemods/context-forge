@@ -1,12 +1,12 @@
 ---
 name: forge
-description: Main entry point for Context Forge. Routes a request to the right built-in capability - coding guidelines, designing or restructuring an ICM workspace, running a ready-made ICM pipeline (script-to-animation, voice-driven-animation, course-deck-production, workspace-builder), or the Elephant-Goldfish idea/design/review workflow. Use when the user says "forge", asks what this toolkit can do, or describes a task that could fit more than one of them.
+description: Main entry point for Context Forge. Routes a request to the right built-in capability - social media team workflow (brand, calendar, captions, posts, publishing, review), coding guidelines, designing or restructuring an ICM workspace, running a ready-made ICM pipeline (script-to-animation, voice-driven-animation, course-deck-production, workspace-builder), or the Elephant-Goldfish idea/design/review workflow. Use when the user says "forge", asks what this toolkit can do, or describes a task that could fit more than one of them.
 license: MIT
 ---
 
 # Context Forge
 
-One toolkit, four sources. Pick the row that matches the request, read that skill's `SKILL.md`, and follow it. If it is ambiguous, ask one question.
+One toolkit, five sources. Pick the row that matches the request, read that skill's `SKILL.md`, and follow it. If it is ambiguous, ask one question.
 
 | The user wants to... | Capability | Skill |
 |---|---|---|
@@ -19,6 +19,7 @@ One toolkit, four sources. Pick the row that matches the request, read that skil
 | Apply review findings | EGM | `egm-resolve` |
 | Document an existing codebase (READMEs per package) | EGM | `egm-bootstrap` |
 | Check whether code still matches its design | EGM | `egm-drift-report` |
+| Run social media for a business: brand setup, content calendar, captions, LinkedIn/Threads/X posts, creatives, scheduling, monthly review | Social AI Team | `social-media-manager` (orchestrator), `brand-onboarding`, `content-calendar`, `caption-writer`, `linkedin-writer`, `threads-writer`, `x-writer`, `social-creative-designer`, `publisher`, `social-performance-review` |
 
 ## Rules
 
