@@ -1,6 +1,6 @@
 # Context Forge
 
-**One Claude Code plugin, one entry point: `/context-forge:forge`.** Describe what you want; it routes you to the right skill out of 28.
+**One Claude Code plugin, one entry point: `/context-forge:forge`.** Describe what you want; it routes you to the right skill out of 21 skills.
 
 Context Forge merges five open-source agent toolkits so you install once instead of five times.
 
